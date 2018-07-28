@@ -1,0 +1,52 @@
+
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+
+Layout/ExtraSpacing:
+  Exclude:
+    - 'Gemfile'
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'bin/rails'
+    - 'bin/rake'
+    - 'spec/rails_helper.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+Style/RedundantBegin:
+  Exclude:
+    - 'bin/yarn'
+
+Style/StderrPuts:
+  Exclude:
+    - 'bin/yarn'
+
+Style/StringLiterals:
+  Exclude:
+    - 'bin/spring'
+    - 'bin/yarn'
+    - 'config/application.rb'
+    - 'config/environments/production.rb'
+    - 'config/puma.rb'
+    - 'spec/rails_helper.rb'
+
+Metrics/LineLength:
+  Max: 80
+  IgnoredPatterns: ['(\A|\s)#']
+  Exclude:
+    - 'spec/rails_helper.rb'
