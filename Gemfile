@@ -22,6 +22,12 @@ group :development do
   gem 'pry-rails',              '~> 0.3.4'
 end
 
+group :test do
+  gem 'phantomjs'
+  gem 'poltergeist'
+  gem 'capybara'
+end
+
 group :development, :test do
   gem 'rspec-rails',            '~> 3.7'
 end
