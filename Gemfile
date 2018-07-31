@@ -26,6 +26,7 @@ group :test do
   gem 'phantomjs'
   gem 'poltergeist'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
