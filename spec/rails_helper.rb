@@ -7,7 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
-require 'support/factory_bot'
+Dir['support/*.rb'].each { |file| require file }
 
 ActiveRecord::Migration.maintain_test_schema!
 
