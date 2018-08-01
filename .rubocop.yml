@@ -43,6 +43,7 @@ Style/StringLiterals:
     - 'config/application.rb'
     - 'config/environments/production.rb'
     - 'config/puma.rb'
+    - 'db/schema.rb'
     - 'spec/rails_helper.rb'
 
 Metrics/LineLength:
@@ -50,3 +51,7 @@ Metrics/LineLength:
   IgnoredPatterns: ['(\A|\s)#']
   Exclude:
     - 'spec/rails_helper.rb'
+
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
