@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_07_29_191616) do
 
-  create_table "posts", force: :cascade do |t|
+  create_table "stories", force: :cascade do |t|
     t.string "title", limit: 65
     t.text "body", null: false
     t.datetime "created_at", null: false
