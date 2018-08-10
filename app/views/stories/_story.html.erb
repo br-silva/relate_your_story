@@ -1,0 +1,9 @@
+<tr id="edit_story_<%= story.id %>">
+  <td><%= story.title %></td>
+  <td><%= story.body %></td>
+  <td><%= link_to 'Edit', edit_story_path(story), remote: true %></td>
+  <td><%= link_to 'Destroy', story,
+                  method: :delete,
+                  remote: true,
+                  data: { confirm: 'Are you sure?' } %></td>
+</tr>

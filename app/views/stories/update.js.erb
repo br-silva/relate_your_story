@@ -1,0 +1,5 @@
+$(function() {
+  $('form')[1].remove()
+  $('#edit_story_<%= @story.id %>').replaceWith('<%= j render @story %>')
+  $('#notifications').html('<%= flash[:success] %>')
+})

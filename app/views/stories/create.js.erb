@@ -1,0 +1,5 @@
+$(function() {
+  $('form')[0].reset()
+  $('#stories').prepend('<%= j render @story %>')
+  $('#notifications').html('<%= j flash[:success] %>')
+})
