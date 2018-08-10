@@ -1,11 +1,11 @@
-<%= form_with(model: story, local: true) do |form| %>
-  <% if story.errors.any? %>
+<%= form_with(model: @story) do |form| %>
+  <% if @story.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(story.errors.count, "error") %>
+      <h2><%= pluralize(@story.errors.count, "error") %>
         prohibited this story from being saved:</h2>
 
       <ul>
-      <% story.errors.full_messages.each do |message| %>
+      <% @story.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -23,6 +23,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit data: { disable_with: 'Creating story...' } %>
   </div>
 <% end %>
