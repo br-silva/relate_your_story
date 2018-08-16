@@ -13,6 +13,7 @@ gem 'turbolinks',               '~> 5'
 gem 'jbuilder',                 '~> 2.5'
 gem 'bootsnap',                 '>= 1.1.0', require: false
 gem 'jquery-rails'
+gem 'bcrypt',                   '~> 3.1.7'
 
 group :development do
   gem 'web-console',            '>= 3.3.0'

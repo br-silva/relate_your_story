@@ -1,0 +1,17 @@
+<h1>Log in</h1>
+
+<%= form_tag login_path do %>
+  <div class="field">
+    <%= label_tag :nickname %><br>
+    <%= text_field_tag :nickname, params[:nickname] %>
+  <div>
+
+  <div class="field">
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+  <div><br>
+
+  <div class="actions">
+    <%= submit_tag "Log in", data: { disable_with: 'Logging in...' } %>
+  </div>
+<% end %>

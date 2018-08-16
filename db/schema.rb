@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_29_191616) do
+ActiveRecord::Schema.define(version: 2018_08_15_173020) do
 
   create_table "stories", force: :cascade do |t|
     t.string "title", limit: 65
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "nickname", limit: 20, null: false
+    t.string "password_digest", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
+    t.index ["password_digest"], name: "index_users_on_password_digest", unique: true
   end
 
 end

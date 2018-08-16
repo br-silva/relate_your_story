@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: %i[edit update destroy]
+  before_action :set_story,    only: %i[edit update destroy]
+  before_action :authenticate, only: %i[new edit create destroy]
 
   def index
     @stories = Story.all.order(created_at: :desc)
@@ -52,7 +53,8 @@ class StoriesController < ApplicationController
   private
 
   def set_story
-    @story = Story.find(params[:id])
+    @story = current_user.stories.find_by_id(params[:id])
+    @story.present? ? @story : display_user_not_allowed
   end
 
   def story_params
@@ -61,5 +63,13 @@ class StoriesController < ApplicationController
 
   def render_error_messages
     render json: @story.errors.full_messages, status: :unprocessable_entity
+  end
+
+  def display_user_not_allowed
+    message = 'You are not allowed to perform this action.'
+    respond_to do |format|
+      format.html { redirect_to stories_url, notice: message }
+      format.js   { render js: "alert('#{message}')" }
+    end
   end
 end
