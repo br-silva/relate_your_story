@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :stories, dependent: :destroy
 
   validates :nickname, presence: true, uniqueness: true, length: { in: 3..20 },
                        format: { with: /\A[a-zA-Z0-9_.-]*\z/i, message: "is \

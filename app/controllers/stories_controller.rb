@@ -4,7 +4,11 @@ class StoriesController < ApplicationController
 
   def index
     @stories = Story.all.order(created_at: :desc)
-    @story = Story.new
+  end
+
+  def new
+    @story = current_user.stories.build
+    respond_to :html, :js
   end
 
   def edit
@@ -12,7 +16,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(story_params)
+    @story = current_user.stories.build(story_params)
     respond_to do |format|
       if @story.save
         flash[:success] = 'Story was successfully created.'

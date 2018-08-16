@@ -1,5 +1,6 @@
 $(function() {
-  $('form')[0].reset()
+  $('form')[0].remove()
+  $('.new-story-link').show()
   $('#stories').prepend('<%= j render @story %>')
   $('#notifications').html('<%= j flash[:success] %>')
 })
