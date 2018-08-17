@@ -19,13 +19,13 @@ class StoriesController < ApplicationController
     @story = current_user.stories.build(story_params)
     respond_to do |format|
       if @story.save
-        flash[:success] = 'Story was successfully created.'
+        message = 'Story was successfully created.'
 
-        format.html { redirect_to stories_url }
-        format.js
+        format.html { redirect_to stories_url, notice: message }
+        format.js   { flash.now[:notice] = message }
       else
         format.html { render :index }
-        format.js { render_error_messages }
+        format.js   { render_error_messages }
       end
     end
   end
@@ -33,24 +33,24 @@ class StoriesController < ApplicationController
   def update
     respond_to do |format|
       if @story.update(story_params)
-        flash[:success] = 'Story was successfully updated.'
+        message = 'Story was successfully updated.'
 
-        format.html { redirect_to stories_url }
-        format.js
+        format.html { redirect_to stories_url, notice: message }
+        format.js   { flash.now[:notice] = message }
       else
         format.html { render :edit }
-        format.js { render_error_messages }
+        format.js   { render_error_messages }
       end
     end
   end
 
   def destroy
     @story.destroy
-    flash[:success] = 'Story was successfully destroyed.'
+    message = 'Story was successfully destroyed.'
 
     respond_to do |format|
-      format.html { redirect_to stories_url }
-      format.js
+      format.html { redirect_to stories_url, notice: message }
+      format.js   { flash.now[:notice] = message }
     end
   end
 

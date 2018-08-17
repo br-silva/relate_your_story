@@ -1,4 +1,4 @@
 $(function() {
   $('#edit_story_<%= @story.id %>').fadeOut()
-  $('#notifications').html('<%= flash[:success] %>')
+  $('#notifications').html('<%= j notice %>')
 })

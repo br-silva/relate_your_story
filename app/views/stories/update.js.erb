@@ -1,5 +1,5 @@
 $(function() {
-  $('form')[1].remove()
+  $('form').remove()
   $('#edit_story_<%= @story.id %>').replaceWith('<%= j render @story %>')
-  $('#notifications').html('<%= flash[:success] %>')
+  $('#notifications').html('<%= j notice %>')
 })
