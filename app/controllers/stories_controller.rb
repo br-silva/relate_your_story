@@ -15,6 +15,7 @@ class StoriesController < ApplicationController
     respond_to :html, :js
   end
 
+  # rubocop:disable Metrics/AbcSize
   def create
     @story = current_user.stories.build(story_params)
     respond_to do |format|
@@ -29,6 +30,7 @@ class StoriesController < ApplicationController
       end
     end
   end
+  # rubocop:enable Metrics/AbcSize
 
   def update
     respond_to do |format|

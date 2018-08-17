@@ -51,6 +51,7 @@ Metrics/LineLength:
   IgnoredPatterns: ['(\A|\s)#']
   Exclude:
     - 'spec/rails_helper.rb'
+    - 'db/schema.rb'
 
 Style/NumericLiterals:
   Exclude:
