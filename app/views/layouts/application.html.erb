@@ -8,13 +8,35 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <div id="notifications"></div>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
-    <% end %>
+    <header>
+      <nav>
+        <%= link_to 'Stop Abuses', root_path, class: 'navbar-brand' %>
+        <ul>
+          <li><%= link_to 'Home', '/home' %></li>
+          <li><%= link_to 'Stories', stories_path %></li>
+          <li><%= link_to 'Support', '/support' %></li>
+        </ul>
+        <ul class="user-links">
+          <% if current_user %>
+          <li><span class="user-nickname"><%= current_user.nickname %></span></li>
+          <li><%= link_to 'Log out', logout_path %></li>
+          <% else %>
+          <li><%= link_to 'Sign up', signup_path %></li>
+          <li><%= link_to 'Log in', login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
 
-    <%= yield %>
+    <main>
+      <div id="notifications">
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+      </div>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
