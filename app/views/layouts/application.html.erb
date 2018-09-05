@@ -38,5 +38,15 @@
 
       <%= yield %>
     </main>
+
+    <footer>
+      <h2>Stop Abuses</h2>
+      <p>Emotional phrase</p>
+      <address>
+        <%= link_to image_tag('gmail_icon.png', alt: 'Gmail icon'),
+                    'mailto:website@email.com',
+                    target: '_blank' %>
+      </address>
+    </footer>
   </body>
 </html>

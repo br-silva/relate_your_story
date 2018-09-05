@@ -68,3 +68,30 @@ body {
 main {
   margin-top: 30px;
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: #ccc;
+  margin-top: 30px;
+
+  a:hover {
+    background-color: #ccc;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 12px 0;
+  }
+
+  img {
+    width: 50px;
+  }
+}
