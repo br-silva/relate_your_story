@@ -30,23 +30,27 @@
     </header>
 
     <main>
-      <div id="notifications">
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <% end %>
-      </div>
+      <div class="container">
+        <div id="notifications">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <% end %>
+        </div>
 
-      <%= yield %>
+        <%= yield %>
+      </div>
     </main>
 
-    <footer>
-      <h2>Stop Abuses</h2>
-      <p>Emotional phrase</p>
-      <address>
-        <%= link_to image_tag('gmail_icon.png', alt: 'Gmail icon'),
-                    'mailto:website@email.com',
-                    target: '_blank' %>
-      </address>
-    </footer>
+    <div class="container">
+      <footer>
+        <h2>Stop Abuses</h2>
+        <p>Emotional phrase</p>
+        <address>
+          <%= link_to image_tag('gmail_icon.png', alt: 'Gmail icon'),
+                      'mailto:website@email.com',
+                      target: '_blank' %>
+        </address>
+      </footer>
+    </div>
   </body>
 </html>

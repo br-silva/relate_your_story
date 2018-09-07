@@ -1,4 +1,4 @@
-@import "*";
+@import "**/*";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 * {
@@ -16,6 +16,7 @@ body {
 
 a {
   text-decoration: none !important;
+  color: #333;
 
   &:visited {
     color: #333;
@@ -59,11 +60,16 @@ header {
       padding-right: 30px;
       border-right: 1px solid #333;
     }
+
+    .user-links {
+      margin-left: auto;
+    }
   }
 }
 
-.user-links {
-  margin-left: auto;
+.container {
+  width: 900px;
+  margin: 0 auto;
 }
 
 footer {
