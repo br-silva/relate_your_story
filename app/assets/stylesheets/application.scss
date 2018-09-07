@@ -1,12 +1,25 @@
 @import "*";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 * {
   margin: 0;
   padding: 0;
 }
 
+body {
+  color: #333;
+  font-family: 'montserrat', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  background-color: #f3f3f3;
+}
+
 a {
   text-decoration: none !important;
+
+  &:visited {
+    color: #333;
+  }
 }
 
 header {
@@ -26,9 +39,7 @@ header {
         list-style: none;
 
         a:hover {
-          color: #111;
           font-weight: bold;
-          background-color: white;
         }
       }
     }
@@ -46,27 +57,13 @@ header {
       line-height: 10px;
       margin-right: 25px;
       padding-right: 30px;
-      color: #111;
-      border-right: 1px solid #111;
-
-      &:hover {
-        background-color: white;
-      }
+      border-right: 1px solid #333;
     }
   }
 }
 
 .user-links {
   margin-left: auto;
-}
-
-body {
-  background-color: #f3f3f3;
-  margin: 0;
-}
-
-main {
-  margin-top: 30px;
 }
 
 footer {
@@ -78,11 +75,8 @@ footer {
   background-color: #ccc;
   margin-top: 30px;
 
-  a:hover {
-    background-color: #ccc;
-  }
-
   h2 {
+    text-transform: uppercase;
     font-size: 25px;
   }
 
