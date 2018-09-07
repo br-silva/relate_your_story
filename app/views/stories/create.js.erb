@@ -1,6 +1,5 @@
 $(function() {
-  $('form')[0].remove()
-  $('.new-story-link').show()
+  $('.js-dismiss-modal').click()
   $('.stories').prepend('<%= j render @story %>')
   $('#notifications').html('<%= j notice %>')
 })

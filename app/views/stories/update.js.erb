@@ -1,5 +1,5 @@
 $(function() {
-  $('form').remove()
+  $('.js-dismiss-modal').click()
   $('#edit_story_<%= @story.id %>').replaceWith('<%= j render @story %>')
   $('#notifications').html('<%= j notice %>')
 })
