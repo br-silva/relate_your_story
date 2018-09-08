@@ -1,8 +1,11 @@
 <div class="story" id="edit_story_<%= story.id %>">
   <h3><%= story.title %></h3>
-  <p><%= story.body %></p>
+  <span>Shared by "<%= story.user.nickname %>" <%= time_ago_in_words(story.created_at) %> ago.</span>
+  <article>
+    <p><%= story.body %></p>
+  </article>
   <% if story.owner? current_user %>
-  <div class="story-buttons">
+  <div class="story-actions">
     <%= link_to 'Edit', edit_story_path(story), remote: true %>
     <%= link_to 'Destroy', story,
                   method: :delete,
