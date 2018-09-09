@@ -68,7 +68,7 @@ class StoriesController < ApplicationController
   end
 
   def render_error_messages
-    render json: @story.errors.full_messages, status: :unprocessable_entity
+    render json: @story.errors, status: :unprocessable_entity
   end
 
   def display_user_not_allowed
