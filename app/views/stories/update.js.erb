@@ -1,5 +1,8 @@
 $(function() {
-  $('.js-dismiss-modal').click()
+  $('[data-dismiss]').click()
   $('#edit_story_<%= @story.id %>').replaceWith('<%= j render @story %>')
-  $('#notifications').html('<%= j notice %>')
+  $('body').append("<%= j render 'shared/notifier' %>")
+  setTimeout(function() {
+    $('.notifier').slideUp(250, function() { this.remove() })
+  }, 3500)
 })

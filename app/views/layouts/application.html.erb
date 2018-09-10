@@ -29,14 +29,17 @@
       </nav>
     </header>
 
+    <% if flash.present? %>
+      <%= javascript_tag do %>
+        $('body').append("<%= j render 'shared/notifier' %>")
+        setTimeout(function() {
+          $('.notifier').slideUp(250, function() { this.remove() })
+        }, 3500)
+      <% end %>
+    <% end %>
+
     <main>
       <div class="container">
-        <div id="notifications">
-          <% flash.each do |name, msg| %>
-            <%= content_tag :div, msg, :id => "flash_#{name}" %>
-          <% end %>
-        </div>
-
         <%= yield %>
       </div>
     </main>

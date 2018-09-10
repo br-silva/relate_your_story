@@ -1,0 +1,8 @@
+<div class="notifier">
+  <span data-dismiss="notifier">&times;</span>
+  <div class="notifier-content">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+  </div>
+</div>
