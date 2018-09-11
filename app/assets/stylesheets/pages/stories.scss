@@ -1,3 +1,16 @@
+.phrase-of-importance {
+  h3 {
+    font-weight: normal;
+    text-align: center;
+    margin: 30px 0 20px;
+  }
+
+  p {
+    line-height: 28px;
+    text-align: justify;
+  }
+}
+
 .new-story-link {
   display: flex;
   justify-content: center;
