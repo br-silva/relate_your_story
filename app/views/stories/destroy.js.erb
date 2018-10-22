@@ -1,4 +1,7 @@
 $(function() {
   $('#edit_story_<%= @story.id %>').fadeOut()
-  $('#notifications').html('<%= j notice %>')
+  $('body').append("<%= j render 'shared/notifier' %>")
+  setTimeout(function() {
+    $('.notifier').slideUp(250, function() { this.remove() })
+  }, 3500)
 })

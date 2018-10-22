@@ -1,0 +1,10 @@
+<%= form_tag report_path, remote: true, class: 'report-form' do %>
+  <div class="field">
+    <%= text_area_tag :message, '', placeholder: 'Write your message...' %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Report', data: { disable_with: 'Reporting...' } %>
+    <button type="button" data-dismiss="report-form">Cancel</button>
+  </div>
+<% end %>

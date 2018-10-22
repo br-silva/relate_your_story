@@ -8,13 +8,55 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <div id="notifications"></div>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <header>
+      <nav>
+        <%= link_to 'Stop Abuses', root_path, class: 'navbar-brand' %>
+        <ul>
+          <li><%= link_to 'Home', '/home' %></li>
+          <li><%= link_to 'Stories', stories_path %></li>
+          <li><%= link_to 'Support', '/support' %></li>
+        </ul>
+        <ul class="user-links">
+          <% if current_user %>
+          <li><span class="user-nickname"><%= current_user.nickname %></span></li>
+          <li><%= link_to 'Log out', logout_path %></li>
+          <% else %>
+          <li><%= link_to 'Sign up', signup_path %></li>
+          <li><%= link_to 'Log in', login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+
+    <% if flash.present? %>
+      <%= javascript_tag do %>
+        $('body').append("<%= j render 'shared/notifier' %>")
+        setTimeout(function() {
+          $('.notifier').slideUp(250, function() { this.remove() })
+        }, 3500)
+      <% end %>
     <% end %>
 
-    <%= yield %>
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <div class="container">
+      <footer>
+        <h2>Stop Abuses</h2>
+        <p>
+          A mudança dói. Mas nada vai doer mais que passar uma vida<br>inteira
+          preso em um lugar que te faz mal!<br>– Manual do homem moderno –
+        </p>
+        <address>
+          <%= link_to image_tag('gmail_icon.png', alt: 'Gmail icon'),
+                      'mailto:abusosjabasta@gmail.com',
+                      target: '_blank' %>
+        </address>
+      </footer>
+    </div>
   </body>
 </html>

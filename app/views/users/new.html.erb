@@ -1,33 +1,26 @@
-<h1>Sign Up</h1>
+<section class="sessions">
+  <h6>Sign Up</h6>
 
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <%= form_with model: @user do |f| %>
+    <div class="field">
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Sign up', data: { disable_with: 'Signing up...' } %>
+      <span>Already have an account?</span>
+      <%= link_to 'Log in', login_path %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :nickname %><br>
-    <%= f.text_field :nickname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div><br>
-
-  <div class="actions">
-    <%= f.submit 'Sign up', data: { disable_with: 'Signing up...' } %>
-  </div>
-<% end %>
+</section>

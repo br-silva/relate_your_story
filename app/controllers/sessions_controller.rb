@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if user.try(:authenticate, params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: "Welcome #{user.nickname}"
+      redirect_to root_url, notice: "Welcome back #{user.nickname}"
     else
       flash.now[:alert] = 'Invalid nickname or password'
       render :new

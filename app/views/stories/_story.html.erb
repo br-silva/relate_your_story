@@ -1,11 +1,17 @@
-<tr id="edit_story_<%= story.id %>">
-  <td><%= story.title %></td>
-  <td><%= story.body %></td>
+<div class="story" id="edit_story_<%= story.id %>">
+  <h3><%= story.title %></h3>
+  <span>Shared by "<%= story.user.nickname %>" <%= time_ago_in_words(story.created_at) %> ago.</span>
+  <article>
+    <p><%= story.body %></p>
+  </article>
   <% if story.owner? current_user %>
-    <td><%= link_to 'Edit', edit_story_path(story), remote: true %></td>
-    <td><%= link_to 'Destroy', story,
-                    method: :delete,
-                    remote: true,
-                    data: { confirm: 'Are you sure?' } %></td>
+  <div class="story-actions">
+    <%= link_to 'Report', report_path, remote: true %>
+    <%= link_to 'Edit', edit_story_path(story), remote: true %>
+    <%= link_to 'Destroy', story,
+                  method: :delete,
+                  remote: true,
+                  data: { confirm: 'Are you sure?' } %>
+  </div>
   <% end %>
-</tr>
+</div>

@@ -1,28 +1,16 @@
-<%= form_with(model: @story) do |form| %>
-  <% if @story.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@story.errors.count, "error") %>
-        prohibited this story from being saved:</h2>
-
-      <ul>
-      <% @story.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_with(model: @story, class: 'story-form') do |form| %>
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, maxlength: 65 %>
+    <%= form.text_field :title, autofocus: true,
+                                placeholder: 'Write your title...' %>
   </div>
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, placeholder: 'Write your story...' %>
   </div>
 
-  <div class="actions">
+  <div class="action">
     <%= form.submit data: { disable_with: 'Creating story...' } %>
   </div>
 <% end %>

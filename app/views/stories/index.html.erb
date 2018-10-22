@@ -1,21 +1,26 @@
-<h1>Stories</h1>
+<div class="phrase-of-importance">
+  <h3>A importância de compartilhar sua história</h3>
+  <p>
+    Vítimas de abusos geralmente não sentem facilidade em dialogar sobre o
+    assunto, por diversos fatores, sendo um dos principais o fato de que
+    costumam se sentir humilhadas, envergonhadas, culpadas e traumatizadas,
+    fazendo com que não dialoguem ou revelem o ocorrido, podendo guardar o
+    abuso em segredo por anos, até se sentirem seguras diante dos
+    acontecimentos. Sendo assim, se quem passou por isso anteriormente e
+    conseguiu superar os traumas deixados, relatarem suas histórias
+    anonimamente, será capaz de fazer com que pessoas que estão passando por
+    essa situação ou já passaram e não superaram, se sintam capazes de superar
+    também ou compartilhem sua história com o objetivo de sentir-se
+    compreendido, receber conselhos, enxergar que outras pessoas que já
+    passaram pelo mesmo, ou até por momentos piores conseguiram procurar ajuda
+    e superar o trauma. Como uma terapia virtual.
+  </p>
+</div>
 
-<p class="new-story-link">
+<div class="new-story-link">
   <%= link_to 'Share a new story', new_story_path, remote: true %>
-</p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody class="stories">
-    <%= render @stories %>
-  </tbody>
-</table>
-
-<br>
+<div class="stories">
+  <%= render @stories %>
+</div>

@@ -1,0 +1,48 @@
+.report-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  padding: 30px;
+  position: fixed;
+  align-self: center;
+  background-color: white;
+  box-shadow: 3px 3px 6px grey;
+  border-radius: 10px;
+  top: 0;
+
+  .field {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      font-size: 16px;
+      font-family: 'montserrat';
+      border-radius: 3px;
+      padding: 6px;
+      margin-top: 10px;
+      resize: none;
+      line-height: 24px;
+      word-spacing: 2px;
+      height: 200px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+
+    input, button {
+      font-size: 16px;
+      padding: 5px;
+      border-radius: 3px;
+    }
+
+    input {
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,8 +1,14 @@
-$(document).on 'ajax:error', (event) ->
-  xhr = event.detail[2]
-  errors = JSON.parse(xhr.responseText)
-  error_list = ''
-  errors.forEach (error) ->
-    error_list += "<li>#{error}</li>"
-  $('#notifications').html "<ul>#{error_list}</ul>"
-  return
+$ ->
+  $(document).on 'ajax:error', 'form', (event) ->
+    invalidFields = JSON.parse event.detail[0]
+    fields = Object.keys invalidFields
+    $('form .field ul')
+      .prev().removeClass('invalid-field')
+      .next().remove()
+    fields.forEach (field) ->
+      errorList = ''
+      invalidFields[field].forEach (errorMessage) ->
+        errorList += "<li>#{field.replace('_', ' ')} #{errorMessage}</li>"
+      $("form :input[id$='#{field}']")
+        .after("<ul class='form-error-messages'>#{errorList}</ul>")
+        .addClass('invalid-field')

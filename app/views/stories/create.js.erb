@@ -1,6 +1,8 @@
 $(function() {
-  $('form')[0].remove()
-  $('.new-story-link').show()
+  $('.modal').fadeOut(200, function() { this.remove() })
   $('.stories').prepend('<%= j render @story %>')
-  $('#notifications').html('<%= j notice %>')
+  $('body').append("<%= j render 'shared/notifier' %>")
+  setTimeout(function() {
+    $('.notifier').slideUp(250, function() { this.remove() })
+  }, 3500)
 })
