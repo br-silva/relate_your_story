@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 gem 'rails',                    '~> 5.2.0'
 gem 'sqlite3'
@@ -14,6 +14,7 @@ gem 'jbuilder',                 '~> 2.5'
 gem 'bootsnap',                 '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'bcrypt',                   '~> 3.1.7'
+gem 'tzinfo-data'
 
 group :development do
   gem 'web-console',            '>= 3.3.0'

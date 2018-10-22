@@ -1,5 +1,5 @@
 $(function() {
-  $('[data-dismiss]').click()
+  $('.modal').fadeOut(200, function() { this.remove() })
   $('#edit_story_<%= @story.id %>').replaceWith('<%= j render @story %>')
   $('body').append("<%= j render 'shared/notifier' %>")
   setTimeout(function() {

@@ -6,6 +6,7 @@
   </article>
   <% if story.owner? current_user %>
   <div class="story-actions">
+    <%= link_to 'Report', report_path, remote: true %>
     <%= link_to 'Edit', edit_story_path(story), remote: true %>
     <%= link_to 'Destroy', story,
                   method: :delete,
